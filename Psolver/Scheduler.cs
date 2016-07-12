@@ -18,6 +18,23 @@ namespace Psolver
 			appoint.date = new DateTime(2016, 1, 9);
 			points.Enqueue(appoint);
 			markAppointmentsOnCalendar(points);
+
+			for (int i = 0; i < 10; i++)
+			{
+				TreeViewColumn hourColumn = new TreeViewColumn();
+				hourColumn.Title = i.ToString();
+				treeview2.AppendColumn(hourColumn);
+				CellRendererText planCell = new CellRendererText();
+				hourColumn.PackStart(planCell, true);
+				hourColumn.AddAttribute(planCell, "text", 0);
+			}
+
+			// Create a model that will hold two strings - Artist Name and Song Title
+			ListStore diaryPlanListStore = new ListStore(typeof(string));
+			diaryPlanListStore.AppendValues("Pr1");
+
+			// Assign the model to the TreeView
+			treeview2.Model = diaryPlanListStore;
 		}
 
 		void markAppointmentsOnCalendar(Queue appoints)
@@ -29,6 +46,8 @@ namespace Psolver
 			/*calendar5.MarkDay(8);
 			calendar5.MarkDay(9);*/
 		}
+
+
 	}
 }
 

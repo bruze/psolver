@@ -68,6 +68,7 @@
     <Compile Include="Model\SchAppointment.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="gtk-gui\Psolver.Scheduler.cs" />
+    <Compile Include="Controller\ProjectsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

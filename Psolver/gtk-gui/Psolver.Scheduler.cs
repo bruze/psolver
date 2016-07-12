@@ -10,6 +10,10 @@ namespace Psolver
 
 		private global::Gtk.VBox vbox1;
 
+		private global::Gtk.ScrolledWindow GtkScrolledWindow;
+
+		private global::Gtk.TreeView treeview2;
+
 		private global::Gtk.Calendar calendar5;
 
 		private global::Gtk.Label GtkLabel;
@@ -34,15 +38,27 @@ namespace Psolver
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
+			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
+			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+			this.treeview2 = new global::Gtk.TreeView();
+			this.treeview2.CanFocus = true;
+			this.treeview2.Name = "treeview2";
+			this.GtkScrolledWindow.Add(this.treeview2);
+			this.vbox1.Add(this.GtkScrolledWindow);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
+			w2.Position = 1;
+			// Container child vbox1.Gtk.Box+BoxChild
 			this.calendar5 = new global::Gtk.Calendar();
 			this.calendar5.CanFocus = true;
 			this.calendar5.Name = "calendar5";
 			this.calendar5.DisplayOptions = ((global::Gtk.CalendarDisplayOptions)(35));
 			this.vbox1.Add(this.calendar5);
-			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.calendar5]));
-			w1.Position = 2;
-			w1.Expand = false;
-			w1.Fill = false;
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.calendar5]));
+			w3.Position = 2;
+			w3.Expand = false;
+			w3.Fill = false;
 			this.GtkAlignment.Add(this.vbox1);
 			this.frame3.Add(this.GtkAlignment);
 			this.GtkLabel = new global::Gtk.Label();
