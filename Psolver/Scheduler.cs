@@ -2,6 +2,7 @@
 using System.Collections;
 using Gtk;
 using Psolver.Model;
+using KNFoundation;
 namespace Psolver
 {
 	public partial class Scheduler : Gtk.Window
@@ -35,6 +36,8 @@ namespace Psolver
 
 			// Assign the model to the TreeView
 			treeview2.Model = diaryPlanListStore;
+
+
 		}
 
 		void markAppointmentsOnCalendar(Queue appoints)
