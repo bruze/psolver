@@ -37,7 +37,7 @@ namespace Psolver
 			// Assign the model to the TreeView
 			treeview2.Model = diaryPlanListStore;
 
-
+			new PrConstraint();
 		}
 
 		void markAppointmentsOnCalendar(Queue appoints)
