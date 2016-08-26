@@ -4,6 +4,8 @@ using Psolver.Model;
 using KNFoundation;
 using KNFoundation.KNKVC;
 using Foundation.Presentation;
+using System.IO;
+using SimpleBroker;
 namespace Psolver
 {
 	using ConstraintOperator = Func<object, bool>;
@@ -12,6 +14,19 @@ namespace Psolver
 		ConstraintOperator _operador = null;
 		dynamic _valor = null;
 		dynamic _llave = "";
+		public dynamic valor
+		{
+			get
+			{
+				return _valor;
+			}
+			set
+			{
+				this.WillChangeValueForKey("valor");
+				_valor = value;
+				this.DidChangeValueForKey("valor");
+			}
+		}
 		public PrConstraint(/*String llave, ConstraintOperator operador, dynamic esperado*/)
 		{
 			/*_llave = llave;
@@ -25,8 +40,11 @@ namespace Psolver
 		}
 		protected void createAppointment()
 		{
-			SchAppointment app = new SchAppointment();
-			app.AddObserverToKeyPathWithOptions(this, "key", KNKeyValueObservingOptions.KNKeyValueObservingOptionNew, null);
+			//SchAppointment app = new SchAppointment();
+			Broker.Subscribe<PrConstraint>(this, valor => {
+				chequear();
+			});
+			this.AddObserverToKeyPathWithOptions(this, "valor", KNKeyValueObservingOptions.KNKeyValueObservingOptionNew, null);
 		}
 		public void ObserveValueForKeyPathOfObject(String keyPath, Object obj, Dictionary<String, Object> change, Object context)
 		{
