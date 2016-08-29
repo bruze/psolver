@@ -5,7 +5,6 @@ using KNFoundation;
 using KNFoundation.KNKVC;
 using Foundation.Presentation;
 using System.IO;
-using SimpleBroker;
 namespace Psolver
 {
 	using ConstraintOperator = Func<object, bool>;
@@ -41,9 +40,6 @@ namespace Psolver
 		protected void createAppointment()
 		{
 			//SchAppointment app = new SchAppointment();
-			Broker.Subscribe<PrConstraint>(this, valor => {
-				chequear();
-			});
 			this.AddObserverToKeyPathWithOptions(this, "valor", KNKeyValueObservingOptions.KNKeyValueObservingOptionNew, null);
 		}
 		public void ObserveValueForKeyPathOfObject(String keyPath, Object obj, Dictionary<String, Object> change, Object context)

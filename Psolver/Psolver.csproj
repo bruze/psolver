@@ -104,15 +104,13 @@
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleBroker">
-      <HintPath>..\packages\SimpleBroker.1.0.0\lib\SimpleBroker.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationFramework">
       <HintPath>Ref\PresentationFramework.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore">
       <HintPath>Ref\PresentationCore.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">

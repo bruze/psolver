@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Gtk;
 using Psolver.Model;
+using System.IO;
 using KNFoundation;
+using static Psolver.Extensions;
 namespace Psolver
 {
 	public partial class Scheduler : Gtk.Window
@@ -18,6 +21,7 @@ namespace Psolver
 			points.Enqueue(appoint);
 			appoint.date = new DateTime(2016, 1, 9);
 			points.Enqueue(appoint);
+
 			markAppointmentsOnCalendar(points);
 
 			for (int i = 0; i < 10; i++)
@@ -33,12 +37,19 @@ namespace Psolver
 			// Create a model that will hold two strings - Artist Name and Song Title
 			ListStore diaryPlanListStore = new ListStore(typeof(string));
 			diaryPlanListStore.AppendValues("Pr1");
-
 			// Assign the model to the TreeView
 			treeview2.Model = diaryPlanListStore;
 
 			PrConstraint constr = new PrConstraint();
 			constr.valor = 2;
+
+			var xs = new System.Xml.Serialization.XmlSerializer(typeof(List<int>));
+			List<int> ints = new List<int> { 1, 2, 3 };
+
+			using (FileStream fs = new FileStream(@"store.xml", FileMode.OpenOrCreate))
+			{
+				xs.Serialize(fs, ints);
+			}
 		}
 
 		void markAppointmentsOnCalendar(Queue appoints)
