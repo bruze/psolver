@@ -124,17 +124,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Project.cs" />
-    <Compile Include="Model\PrConstraints.cs" />
     <Compile Include="Model\PrSchedule.cs" />
     <Compile Include="Model\SchAppointment.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="gtk-gui\Psolver.Scheduler.cs" />
     <Compile Include="Controller\ProjectsManager.cs" />
     <Compile Include="Model\PrConstraint.cs" />
+    <Compile Include="Tool\Gerente.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Controller\" />
+    <Folder Include="Tool\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -40,8 +40,11 @@ namespace Psolver
 			// Assign the model to the TreeView
 			treeview2.Model = diaryPlanListStore;
 
-			PrConstraint constr = new PrConstraint();
-			constr.valor = 2;
+			Project pro = new Project("Zatrapa");
+			pro.añadeRestriccion("valor", "valoreeeee");
+			var gerente = Gerente.instancia();
+			/*PrConstraint constr = new PrConstraint();
+			constr.valor = 2;*/
 
 			var xs = new System.Xml.Serialization.XmlSerializer(typeof(List<int>));
 			List<int> ints = new List<int> { 1, 2, 3 };
