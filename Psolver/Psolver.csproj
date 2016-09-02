@@ -131,6 +131,9 @@
     <Compile Include="Controller\ProjectsManager.cs" />
     <Compile Include="Model\PrConstraint.cs" />
     <Compile Include="Tool\Gerente.cs" />
+    <Compile Include="Model\Restriccion.cs" />
+    <Compile Include="Tool\Factoria.cs" />
+    <Compile Include="Tool\Extension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

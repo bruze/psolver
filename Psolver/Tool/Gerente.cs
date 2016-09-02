@@ -7,12 +7,9 @@ namespace Psolver
 	public class Gerente
 	{
 		Dictionary<String, Project> _proyectos = new Dictionary<string, Project>();
-		static private Gerente _instancia = null;
+		static private Gerente _instancia = new Gerente();
 		static public Gerente instancia()
 		{
-			if (_instancia == null) {
-				_instancia = new Gerente();	
-			}
 			return _instancia;
 		}
 		static public Project crearProyecto(String nombre)

@@ -5,7 +5,7 @@ using Gtk;
 using Psolver.Model;
 using System.IO;
 using KNFoundation;
-using static Psolver.Extensions;
+using Psolver.Extension;
 namespace Psolver
 {
 	public partial class Scheduler : Gtk.Window
@@ -40,9 +40,11 @@ namespace Psolver
 			// Assign the model to the TreeView
 			treeview2.Model = diaryPlanListStore;
 
-			Project pro = new Project("Zatrapa");
-			pro.añadeRestriccion("valor", "valoreeeee");
-			var gerente = Gerente.instancia();
+			/*Project pro = new Project("Zatrapa");
+			pro.añadeRestriccion("valor", "valoreeeee");*/
+			var pr = Gerente.crearProyecto("Alamir");
+			pr.añadeRestriccion(new Restriccion("persona", "1"));
+			e.print(pr.valorRestriccion("persona").ToString());
 			/*PrConstraint constr = new PrConstraint();
 			constr.valor = 2;*/
 
