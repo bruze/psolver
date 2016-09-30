@@ -22,6 +22,7 @@ namespace Psolver
 			appoint.date = new DateTime(2016, 1, 9);
 			points.Enqueue(appoint);
 
+			calendar5.DaySelected += handleCalendarSelection;
 			markAppointmentsOnCalendar(points);
 
 			for (int i = 0; i < 10; i++)
@@ -67,7 +68,10 @@ namespace Psolver
 			calendar5.MarkDay(9);*/
 		}
 
-
+		protected void handleCalendarSelection(object o, EventArgs args)
+		{
+			e.print(o.ToString());
+		}
 	}
 }
 
